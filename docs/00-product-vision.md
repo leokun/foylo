@@ -1,23 +1,23 @@
-# Vision produit
+# Product vision
 
-## Décidé
+## Decided
 
-Le nom de travail est **Foylo**, inspiré du foyer. Le dossier local porte exactement cette orthographe.
+The working name is **Foylo**, inspired by the French word for household (foyer). The local folder uses exactly this spelling.
 
-Le cœur du besoin est de relier la semaine habituelle, ses exceptions, les responsabilités, les lieux et ce qui s'est réellement passé. Le besoin initial concerne la crèche, la nounou, la garderie et la cantine, avec une comparaison des heures ou quantités avec les factures.
+The core need is to connect the usual week, its exceptions, responsibilities, places and what actually happened. The initial need concerns daycare, the nanny, after-school care and school lunch, with a comparison of hours or quantities against invoices.
 
-## À valider
+## To validate
 
-Le positionnement proposé reste un organisateur opérationnel du quotidien familial : « Aujourd'hui, qui fait quoi, où et quand ? ». L'usage quotidien alimente les pointages, l'historique et le récapitulatif mensuel. Le contrôle des factures devient un bénéfice de cet historique.
+The proposed positioning remains an operational organizer for everyday family life: "Today, who does what, where and when?". Daily use feeds the check-ins, the history and the monthly summary. Invoice control becomes a benefit of that history.
 
-La contre-analyse proposait de placer le contrôle prévu/réel au premier plan. La dernière orientation conserve la coordination quotidienne comme moteur d'usage. Cette hiérarchie produit reste à confirmer lors du cadrage V1.
+The counter-analysis proposed putting planned/observed control front and center. The latest direction keeps daily coordination as the driver of usage. This product hierarchy remains to be confirmed during V1 framing.
 
-Les risques à examiner sont la saisie initiale des semaines types, l'adoption par le second adulte et l'oubli des pointages. Le produit doit apporter une valeur chaque jour pour produire un historique mensuel utile.
+The risks to examine are the initial entry of weekly templates, adoption by the second adult and forgotten check-ins. The product must deliver value every day in order to produce a useful monthly history.
 
-La disponibilité commerciale du nom reste à vérifier : marques, domaines et boutiques d'applications. Les recherches évoquées dans la conversation ne valent pas validation actuelle.
+The commercial availability of the name remains to be verified: trademarks, domains and app stores. The searches mentioned in the conversation do not amount to current validation.
 
-## Rejeté/repoussé
+## Rejected/deferred
 
-- Remplacer complètement les calendriers généralistes : cela diluerait le besoin métier.
-- Reprendre les anciennes pistes de nommage : Foylo est désormais le nom de travail confirmé.
-- Présenter un montant facturable comme acquis : les règles tarifaires ne sont pas définies.
+- Fully replacing general-purpose calendars: this would dilute the business need.
+- Revisiting the earlier naming leads: Foylo is now the confirmed working name.
+- Presenting a billable amount as a given: the pricing rules are not defined.

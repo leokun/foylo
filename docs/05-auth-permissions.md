@@ -1,21 +1,21 @@
-# Authentification et permissions
+# Authentication and permissions
 
-## Décidé
+## Decided
 
-Aucun fournisseur d'authentification ni matrice de permissions n'est encore arrêté.
+No authentication provider or permissions matrix has been chosen yet.
 
-## À valider
+## To validate
 
-Le foyer serait le périmètre principal d'accès. Le modèle proposé passe par FamilyMembership entre User et Family, même si l'usage V1 se limite à une famille par compte et deux adultes. Cela évite de figer une appartenance unique directement dans User.
+The household would be the primary access scope. The proposed model goes through FamilyMembership between User and Family, even though V1 usage is limited to one family per account and two adults. This avoids hard-coding a single membership directly in User.
 
-Une Person représentée dans le planning ne dispose pas nécessairement d'un compte. Un grand-parent pourrait être désigné comme responsable sans recevoir pour autant un accès à l'application.
+A Person shown in the schedule does not necessarily have an account. A grandparent could be designated as a responsible adult without being granted access to the application.
 
-Les rôles envisagés sont OWNER, ADULT et MEMBER. Leurs droits précis restent à définir : invitation, gestion du foyer, modification du planning, pointage, correction et suppression de données.
+The roles under consideration are OWNER, ADULT and MEMBER. Their exact rights remain to be defined: invitations, household management, schedule changes, check-in, correction and data deletion.
 
-Les méthodes proposées sont Apple, éventuellement Google, et email avec lien de connexion. Invitations par lien ou QR code, expiration, usage unique, retrait d'accès et récupération du compte propriétaire restent à spécifier.
+The proposed methods are Apple, possibly Google, and email with a sign-in link. Invitations by link or QR code, expiration, single use, access removal and recovery of the owner account remain to be specified.
 
-Les accès serveur devront vérifier l'appartenance active au foyer pour chaque opération. La gestion des données déjà présentes sur un appareil déconnecté après révocation doit être traitée séparément de la coupure d'accès serveur.
+Server-side access will have to verify active household membership for every operation. Handling data already present on a disconnected device after revocation must be addressed separately from cutting off server access.
 
-## Rejeté/repoussé
+## Rejected/deferred
 
-Multi-foyers, partage d'un enfant entre foyers et permissions fines pour intervenants sont proposés après la V1. Une table Grant a été suggérée dans la contre-analyse ; sa création immédiate n'est pas décidée.
+Multi-household support, sharing a child between households and fine-grained permissions for external caregivers are proposed for after V1. A Grant table was suggested in the counter-analysis; creating it immediately has not been decided.

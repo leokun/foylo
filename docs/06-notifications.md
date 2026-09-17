@@ -1,24 +1,24 @@
 # Notifications
 
-## Décidé
+## Decided
 
-Le niveau de notifications inclus en V1 n'est pas encore figé.
+The level of notifications included in V1 has not been finalized yet.
 
-## À valider
+## To validate
 
-Deux catégories sont proposées :
+Two categories are proposed:
 
-- Notifications locales pour les informations déjà connues : événement imminent, récupération et rappel de pointage.
-- Notifications serveur pour les changements ou faits enregistrés par un autre adulte.
+- Local notifications for information already known: upcoming event, pick-up and check-in reminder.
+- Server notifications for changes or facts recorded by another adult.
 
-Exemple de comportement attendu à préciser : lorsqu'une récupération est enregistrée puis synchronisée, le second téléphone actualise la journée et supprime le rappel devenu inutile.
+Example of expected behavior to be specified: when a pick-up is recorded and then synchronized, the second phone refreshes the day and removes the reminder that is no longer needed.
 
-Un push silencieux a été envisagé pour faciliter la synchronisation. La reprise effective doit également être définie à l'ouverture de l'application et au retour du réseau ; les garanties de livraison et d'exécution seront vérifiées lors du choix technique.
+A silent push has been considered to facilitate synchronization. Actual recovery must also be defined when the application is opened and when the network returns; delivery and execution guarantees will be verified when the technical choice is made.
 
-Expo Notifications et Expo Push sont des candidats, sans sélection définitive. Les préférences, délais, horaires de silence et comportements après modification du planning restent à décider.
+Expo Notifications and Expo Push are candidates, without a final selection. Preferences, delays, quiet hours and behavior after schedule changes remain to be decided.
 
-La contre-analyse propose des messages externes génériques, sans prénom, lieu ni horaire sensible. Cela remplace la piste initiale de notifications détaillant la récupération d'un enfant, sous réserve de validation du cadrage confidentialité.
+The counter-analysis proposes generic external messages, with no first name, place or sensitive time. This replaces the initial idea of notifications detailing a child's pick-up, subject to validation of the privacy framing.
 
-## Rejeté/repoussé
+## Rejected/deferred
 
-Les notifications riches et actions avancées sont proposées après la V1. Une notification ne constitue pas la source de vérité du pointage.
+Rich notifications and advanced actions are proposed for after V1. A notification is not the source of truth for a check-in.

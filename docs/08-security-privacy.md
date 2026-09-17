@@ -1,30 +1,30 @@
-# Sécurité et confidentialité
+# Security and privacy
 
-## Décidé
+## Decided
 
-Les choix détaillés de sécurité restent à valider. Le domaine contient des données sensibles pour les familles : personnes, lieux habituels, horaires et responsabilités.
+Detailed security choices remain to be validated. The domain contains sensitive data for families: people, usual places, schedules and responsibilities.
 
-## À valider : exigences proposées
+## To validate: proposed requirements
 
-- Pas de localisation en temps réel.
-- Hébergement en Union européenne.
-- Invitations à durée courte et révocation de l'accès serveur dès retrait d'un membre.
-- Pas de prénom, lieu ou autre détail sensible dans les contenus push externes.
-- Pas de SDK d'analytics tiers.
-- Contrôle systématique de l'accès au foyer et traçabilité des corrections.
+- No real-time location.
+- Hosting in the European Union.
+- Short-lived invitations and revocation of server access as soon as a member is removed.
+- No first name, place or other sensitive detail in external push content.
+- No third-party analytics SDK.
+- Systematic household access control and traceability of corrections.
 
-Ces propositions proviennent de la contre-analyse. Elles ne décrivent pas des protections déjà mises en place.
+These proposals come from the counter-analysis. They do not describe protections already in place.
 
-## Questions à résoudre avant implémentation
+## Questions to resolve before implementation
 
-1. Quelles données de lieux et de personnes sont réellement nécessaires en V1 ?
-2. Comment protéger la base locale, les sessions et les sauvegardes ?
-3. Que conserve un appareil hors ligne après une révocation, et quand les données locales sont-elles supprimées ?
-4. Quelle durée de conservation choisir pour les pointages, journaux et sauvegardes ?
-5. Comment articuler l'historique append-only avec une demande de suppression ou de fermeture du foyer ?
-6. Comment gérer le départ du propriétaire et le transfert de responsabilité du compte familial ?
-7. Quelles données sont autorisées dans les journaux techniques et outils de diagnostic ?
+1. Which place and person data is actually necessary in V1?
+2. How should the local database, sessions and backups be protected?
+3. What does an offline device keep after a revocation, and when is local data deleted?
+4. What retention period should be chosen for check-ins, logs and backups?
+5. How should the append-only history be reconciled with a deletion request or the closure of the household?
+6. How should the owner's departure and the transfer of responsibility for the family account be handled?
+7. Which data is allowed in technical logs and diagnostic tools?
 
-## Rejeté/repoussé
+## Rejected/deferred
 
-Le partage inter-foyers et les accès limités de tiers sont proposés après la V1. Leurs implications ne doivent pas être considérées comme résolues par les seuls rôles OWNER/ADULT/MEMBER.
+Cross-household sharing and limited third-party access are proposed for after V1. Their implications must not be considered resolved by the OWNER/ADULT/MEMBER roles alone.

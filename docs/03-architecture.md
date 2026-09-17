@@ -1,29 +1,29 @@
 # Architecture
 
-## Décidé
+## Decided
 
-- Application mobile : Expo, React Native et TypeScript.
-- Base de données : PostgreSQL.
-- Accès aux données côté serveur : Drizzle.
-- Logique du prévu à la demande et pointages append-only.
-- Conception offline-first.
+- Mobile application: Expo, React Native and TypeScript.
+- Database: PostgreSQL.
+- Server-side data access: Drizzle.
+- On-demand planned logic and append-only check-ins.
+- Offline-first design.
 
-Ces choix privilégient le partage de la logique métier TypeScript et un modèle relationnel adapté aux liens entre foyers, personnes, activités et faits.
+These choices favor sharing the TypeScript business logic and a relational model suited to the links between households, persons, activities and facts.
 
-## À valider
+## To validate
 
-La séparation proposée comprend une application mobile, une API, un domaine TypeScript indépendant de l'interface, une couche de données et un client d'API. Les futurs clients web et Watch ne doivent pas imposer de développement immédiat.
+The proposed separation comprises a mobile application, an API, a TypeScript domain independent of the interface, a data layer and an API client. Future web and Watch clients must not require immediate development.
 
-Le domaine porterait l'expansion du planning, l'application des exceptions, la lecture du journal et les agrégats mensuels. Les règles doivent être utilisables localement et côté serveur avec les mêmes résultats.
+The domain would carry schedule expansion, the application of exceptions, reading the log and the monthly aggregates. The rules must be usable locally and server-side with the same results.
 
-Les écritures métier passeraient par une API ou des fonctions serveur pour garantir autorisations et idempotence. La sécurité des tables servirait de défense complémentaire. Le contrat exact reste ouvert.
+Business writes would go through an API or server functions to guarantee authorization and idempotency. Table-level security would serve as a complementary defense. The exact contract remains open.
 
-Supabase est une option pour l'authentification et PostgreSQL managé. Hono et Fastify sont des pistes pour l'API. Aucun fournisseur, framework serveur, hébergeur, gestionnaire de monorepo ou outil de déploiement n'est arrêté.
+Supabase is an option for authentication and managed PostgreSQL. Hono and Fastify are leads for the API. No provider, server framework, host, monorepo manager or deployment tool has been settled.
 
-La sélection devra comparer la simplicité d'exploitation, la localisation des données, les sauvegardes, la compatibilité avec la synchronisation et le coût. Les capacités actuelles des solutions seront vérifiées au moment de l'arbitrage.
+The selection will have to compare operational simplicity, data location, backups, compatibility with synchronization and cost. The current capabilities of the solutions will be verified at decision time.
 
-## Rejeté/repoussé
+## Rejected/deferred
 
-L'option iPhone entièrement native n'est pas retenue dans la synthèse finale. L'argument en sa faveur était la proximité avec une future Watch ; le choix TypeScript privilégie le partage du domaine mobile. Les détails d'intégration native restent à étudier.
+The fully native iPhone option is not retained in the final synthesis. The argument in its favor was proximity to a future Watch; the TypeScript choice favors sharing the mobile domain. Native integration details remain to be studied.
 
-Aucun squelette applicatif, dépendance, schéma SQL ou configuration d'infrastructure n'est créé à ce stade.
+No application skeleton, dependency, SQL schema or infrastructure configuration is created at this stage.

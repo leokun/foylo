@@ -1,37 +1,37 @@
-# Foylo : dossier de conception
+# Foylo: design dossier
 
-Mis à jour le 17 septembre 2026. Phase actuelle : documentation et décisions, sans implémentation.
+Updated September 17, 2026. Current phase: documentation and decisions, no implementation.
 
-Ces documents reprennent la conversation « Applications de pointage familial » du 17 septembre 2026, notamment son brief complet, sa contre-analyse et sa synthèse finale. Les propositions antérieures sont conservées comme pistes lorsqu'elles n'ont pas été confirmées. Aucune nouvelle recherche technique, commerciale ou juridique n'a été effectuée pour cette transcription.
+These documents draw on the "Family check-in applications" conversation of September 17, 2026, in particular its full brief, its counter-analysis and its final synthesis. Earlier proposals are kept as leads where they have not been confirmed. No new technical, commercial or legal research was carried out for this transcription.
 
-## Lecture
+## Reading order
 
-1. [Vision produit](00-product-vision.md)
-2. [Périmètre V1](01-v1-scope.md)
-3. [Modèle métier](02-domain-model.md)
+1. [Product vision](00-product-vision.md)
+2. [V1 scope](01-v1-scope.md)
+3. [Domain model](02-domain-model.md)
 4. [Architecture](03-architecture.md)
-5. [Fonctionnement hors ligne et synchronisation](04-offline-sync.md)
-6. [Authentification et permissions](05-auth-permissions.md)
+5. [Offline operation and synchronization](04-offline-sync.md)
+6. [Authentication and permissions](05-auth-permissions.md)
 7. [Notifications](06-notifications.md)
-8. [Plateformes](07-platforms.md)
-9. [Sécurité et confidentialité](08-security-privacy.md)
-10. [Évolutions futures](09-future-scope.md)
-11. [Registre des décisions](decisions/README.md)
+8. [Platforms](07-platforms.md)
+9. [Security and privacy](08-security-privacy.md)
+10. [Future scope](09-future-scope.md)
+11. [Decision register](adr/README.md)
 
-## Statuts
+## Statuses
 
-- **Décidé** : choix retenu dans la synthèse finale ou confirmé explicitement depuis.
-- **À valider** : proposition, détail de conception ou arbitrage encore ouvert.
-- **Rejeté/repoussé** : option abandonnée ou différée, avec sa raison.
+- **Decided**: choice retained in the final synthesis or explicitly confirmed since.
+- **To validate**: proposal, design detail or trade-off still open.
+- **Rejected/deferred**: option abandoned or postponed, with its reason.
 
-Les exemples et critères de validation précisent le plan ; ils ne constituent pas une validation supplémentaire du périmètre.
+Examples and validation criteria refine the plan; they do not constitute additional validation of the scope.
 
-## Prochaines décisions, dans l'ordre
+## Next decisions, in order
 
-1. Confirmer le périmètre V1 et les parcours quotidiens indispensables.
-2. Définir les règles du prévu/réel : repas non pointés, début automatique, corrections, doublons et changement d'une semaine type.
-3. Figer le modèle de données conceptuel et la gestion du calendrier scolaire.
-4. Choisir le backend, l'authentification, le stockage local et le mécanisme de synchronisation.
-5. Confirmer les exigences de confidentialité, les notifications et les critères de recette.
+1. Confirm the V1 scope and the essential daily journeys.
+2. Define the planned/observed rules: meals without check-in, automatic start, corrections, duplicates and changes to a weekly template.
+3. Freeze the conceptual data model and the handling of the school calendar.
+4. Choose the backend, authentication, local storage and synchronization mechanism.
+5. Confirm the privacy requirements, notifications and acceptance testing criteria.
 
-Le passage au développement fera l'objet d'une demande distincte.
+Moving on to development will be the subject of a separate request.

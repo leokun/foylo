@@ -1,27 +1,27 @@
-# Évolutions futures
+# Future scope
 
-## Décidé
+## Decided
 
-Aucune des fonctionnalités ci-dessous n'est engagée en développement. Leur report relève du périmètre V1 proposé, encore à confirmer.
+None of the features below is committed to development. Their deferral follows from the proposed V1 scope, which is still to be confirmed.
 
-## Rejeté/repoussé : propositions après V1
+## Rejected/deferred: proposals for after V1
 
-| Sujet | Intention | Raison du report |
+| Topic | Intent | Reason for deferral |
 | --- | --- | --- |
-| Tournées | Étapes ordonnées et éventuel réordonnancement | Valider d'abord la liste quotidienne de responsabilités |
-| Navigation | Ouvrir une destination dans Waze ou Plans | Complément à la coordination, non essentiel au pointage |
-| Tarification | Prix par repas, durée ou tranche | Règles métier distinctes des quantités et durées |
-| Watch | Prochaine mission et pointage rapide | Client supplémentaire et synchronisation à étudier |
-| Android | Étendre l'accès mobile | Concentrer la première livraison sur iPhone |
-| Web | Configuration et historique | Éviter une interface supplémentaire en V1 |
-| Multi-foyers | Familles recomposées et parents séparés | Partage et confidentialité plus complexes |
-| Permissions externes | Accès limité pour nounou ou proche | Nécessite une matrice fine et des révocations maîtrisées |
-| Push riche et widgets | Actions contextuelles | Confirmer d'abord les usages quotidiens |
+| Rounds | Ordered stops and possible reordering | Validate the daily list of responsibilities first |
+| Navigation | Open a destination in Waze or Apple Maps | Complements coordination, not essential to check-in |
+| Pricing | Price per meal, duration or time slot | Business rules distinct from quantities and durations |
+| Watch | Next task and quick check-in | Additional client and synchronization to be studied |
+| Android | Extend mobile access | Focus the first delivery on iPhone |
+| Web | Configuration and history | Avoid an additional interface in V1 |
+| Multi-household | Blended families and separated parents | More complex sharing and privacy |
+| External permissions | Limited access for a nanny or relative | Requires a fine-grained matrix and controlled revocations |
+| Rich push and widgets | Contextual actions | Confirm daily usage first |
 
-## À valider
+## To validate
 
-L'ordre de ces évolutions dépendra de l'usage réel. Aucun calendrier de livraison n'est défini.
+The order of these evolutions will depend on actual usage. No delivery schedule is defined.
 
-La tarification devra distinguer quantité attendue, présence déclarée, durée estimée et règle de facturation. Le récapitulatif V1 ne doit pas promettre un calcul automatique du montant d'une facture.
+Pricing will need to distinguish expected quantity, declared attendance, estimated duration and billing rule. The V1 summary must not promise automatic calculation of an invoice amount.
 
-La navigation envisagée ouvre une destination à la fois ; aucune optimisation de parcours ou transmission complète d'une tournée n'est décidée.
+The envisioned navigation opens one destination at a time; no route optimization or full transmission of a round has been decided.

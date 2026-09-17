@@ -1,31 +1,31 @@
-# Fonctionnement hors ligne et synchronisation
+# Offline operation and synchronization
 
-## Décidé
+## Decided
 
-Le pointage doit fonctionner sans réseau. L'action est enregistrée localement et visible immédiatement, puis synchronisée lorsque la connexion revient. Les pointages sont des faits ajoutés au journal.
+Check-in must work without a network connection. The action is recorded locally and visible immediately, then synchronized when connectivity returns. Check-ins are facts appended to the log.
 
-## À valider
+## To validate
 
-Le flux proposé est : saisie, stockage local durable, affichage, file d'envoi, validation serveur, puis réception des changements sur les autres appareils.
+The proposed flow is: input, durable local storage, display, outgoing queue, server validation, then reception of changes on the other devices.
 
-Les identifiants générés sur le client, les clés d'idempotence et un curseur de récupération incrémentale sont proposés. La répétition d'un envoi ne doit pas créer de nouveau fait.
+Client-generated identifiers, idempotency keys and an incremental recovery cursor are proposed. Resending the same submission must not create a new fact.
 
-L'interface devra distinguer les données enregistrées sur l'appareil, synchronisées et refusées. Les modalités de reprise après fermeture de l'application, d'erreur et de changement de compte sont à préciser.
+The interface will need to distinguish data that is stored on the device, synchronized, and rejected. Recovery behavior after the application is closed, after an error, and after an account change remains to be specified.
 
-| Situation | Arbitrage nécessaire |
+| Situation | Decision required |
 | --- | --- |
-| Même opération renvoyée | Déduplication par identité de mutation |
-| Deux adultes pointent la même récupération | Conserver les deux faits et décider de la lecture métier |
-| Deux corrections du même pointage | Définir la correction applicable et le signalement |
-| Modification concurrente d'une règle | Choisir versionnement, résolution ou signalement |
-| Accès révoqué avant l'envoi | Refuser l'écriture serveur et définir le devenir de la saisie locale |
+| Same operation resent | Deduplication by mutation identity |
+| Two adults check in the same pick-up | Keep both facts and decide on the business interpretation |
+| Two corrections of the same check-in | Define which correction applies and how it is flagged |
+| Concurrent modification of a rule | Choose between versioning, resolution or flagging |
+| Access revoked before sending | Refuse the server write and define what happens to the local entry |
 
-Le journal append-only préserve les faits, mais ne résout pas à lui seul leur interprétation. « Le plus tôt gagne » ou un seuil d'écart sont des propositions non validées. La dernière écriture par champ pour règles et exceptions reste également à évaluer.
+The append-only log preserves the facts, but does not by itself resolve how they are interpreted. "Earliest wins" or a divergence threshold are unvalidated proposals. Last-write-wins per field for rules and exceptions also remains to be evaluated.
 
-SQLite, PowerSync, ElectricSQL ou une synchronisation dédiée sont des pistes. Aucun choix de bibliothèque locale ou de moteur de synchronisation n'est arrêté.
+SQLite, PowerSync, ElectricSQL or a dedicated synchronization layer are candidate approaches. No choice of local library or synchronization engine has been made.
 
-## Rejeté/repoussé
+## Rejected/deferred
 
-- Attendre le réseau pour confirmer un pointage local : incompatible avec le besoin.
-- Confondre absence de doublon technique et absence de double déclaration métier.
-- Concevoir dès la V1 une synchronisation autonome complète pour la Watch.
+- Waiting for the network to confirm a local check-in: incompatible with the need.
+- Confusing the absence of technical duplicates with the absence of duplicate business declarations.
+- Designing full autonomous synchronization for the Watch from V1.

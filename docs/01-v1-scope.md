@@ -1,36 +1,36 @@
-# Périmètre V1
+# V1 scope
 
-## Décidé
+## Decided
 
-La V1 et le schéma de données doivent être cadrés avant de commencer à coder. Le principe de fonctionnement hors ligne est retenu.
+The V1 and the data schema must be framed before any coding starts. The offline operation principle is retained.
 
-## À valider : périmètre proposé
+## To validate: proposed scope
 
-| Domaine | Proposition V1 |
+| Domain | V1 proposal |
 | --- | --- |
-| Foyer | Une famille par compte dans l'usage V1, deux comptes adultes |
-| Personnes | Enfants et adultes représentés indépendamment des comptes |
-| Référentiel | Lieux et activités |
-| Planning | Semaine type, calendriers scolaires, jours fériés, fermetures et exceptions |
-| Responsabilités | Qui dépose ou récupère chaque personne |
-| Aujourd'hui | Activités, horaires, lieux, responsables et prochaine action |
-| Pointage | Début/fin, fin seule, présence/absence, ajustement rapide |
-| Historique | Corrections traçables et séparation prévu/réel |
-| Récapitulatif | Quantités et durées mensuelles par personne et activité |
+| Household | One family per account in V1 usage, two adult accounts |
+| Persons | Children and adults represented independently of accounts |
+| Reference data | Places and activities |
+| Planning | Weekly template, school calendars, public holidays, closures and exceptions |
+| Responsibilities | Who drops off or picks up each person |
+| Today | Activities, times, places, responsible adults and next action |
+| Check-in | Start/end, end only, present/absent, quick adjustment |
+| History | Traceable corrections and planned/observed separation |
+| Summary | Monthly quantities and durations per person and activity |
 
-Les actions rapides envisagées sont « Maintenant », « -5 minutes », « -10 minutes » et le choix d'une heure. Pour une garderie commençant à 16:30, une récupération à 17:48 peut être saisie seule. La provenance du début utilisé dans le calcul devra rester explicite.
+The quick actions under consideration are "Now", "-5 minutes", "-10 minutes" and picking a time. For after-school care starting at 16:30, a pick-up at 17:48 can be entered on its own. The provenance of the start time used in the calculation must remain explicit.
 
-La cantine doit pouvoir être prévue automatiquement sans demander une confirmation quotidienne. La qualification des repas sans pointage reste à décider : attendus ou présumés, mais pas présentés sans distinction comme des présences constatées.
+School lunch must be plannable automatically without requiring a daily confirmation. How meals without a check-in are qualified remains to be decided: expected or presumed, but not presented indiscriminately as observed attendance.
 
-## Scénarios proposés pour valider la V1
+## Proposed scenarios to validate the V1
 
-1. Configurer deux enfants avec des lieux et des semaines types différents.
-2. Exclure automatiquement les périodes où l'école est fermée.
-3. Changer le responsable un jeudi sans affecter les jeudis suivants.
-4. Enregistrer une récupération hors ligne puis retrouver le fait sur le second téléphone.
-5. Corriger 17:48 en 17:43 en conservant l'historique de la correction.
-6. Comparer prévu et déclaré sur un mois, avec les données manquantes identifiables.
+1. Set up two children with different places and weekly templates.
+2. Automatically exclude periods when the school is closed.
+3. Change the responsible adult on one Thursday without affecting the following Thursdays.
+4. Record a pick-up offline, then find the fact on the second phone.
+5. Correct 17:48 to 17:43 while keeping the history of the correction.
+6. Compare planned and declared over a month, with missing data identifiable.
 
-## Rejeté/repoussé
+## Rejected/deferred
 
-Tournées explicites, navigation, tarification, Android, web, Watch, multi-foyers, permissions externes sophistiquées et push riche sont proposés après la V1. Voir [les évolutions](09-future-scope.md).
+Explicit rounds, navigation, pricing, Android, web, Watch, multiple households, sophisticated external permissions and rich push are proposed for after the V1. See [future scope](09-future-scope.md).

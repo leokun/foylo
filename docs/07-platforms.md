@@ -1,19 +1,19 @@
-# Plateformes
+# Platforms
 
-## Décidé
+## Decided
 
-Le socle mobile retenu est Expo / React Native / TypeScript. La logique métier doit pouvoir être partagée.
+The chosen mobile foundation is Expo / React Native / TypeScript. Business logic must be shareable.
 
-## À valider
+## To validate
 
-La proposition de livraison commence sur iPhone. Les versions minimales, les appareils cibles et le mode de distribution restent à choisir.
+The proposed delivery starts on iPhone. Minimum versions, target devices and distribution mode remain to be chosen.
 
-Android demeure une possibilité future, cohérente avec le choix mobile. Une interface web pourrait faciliter la configuration des semaines types et la consultation de l'historique.
+Android remains a future possibility, consistent with the mobile choice. A web interface could make it easier to configure weekly templates and browse history.
 
-La Watch est envisagée comme une interface légère pour la prochaine mission et les actions rapides. La piste de conception est une application SwiftUI reliée à l'iPhone par WatchConnectivity. La faisabilité, les contraintes de distribution et le comportement téléphone absent restent à vérifier avant tout engagement.
+The Watch is envisioned as a lightweight interface for the next task and quick actions. The design direction is a SwiftUI application connected to the iPhone through WatchConnectivity. Feasibility, distribution constraints and behavior when the phone is absent remain to be verified before any commitment.
 
-Préserver une logique orientée actions simples dès la conception est proposé pour cette évolution, sans créer de client Watch ni figer des routes d'API aujourd'hui.
+Preserving a logic oriented toward simple actions from the design stage is proposed for this evolution, without building a Watch client or locking in API routes today.
 
-## Rejeté/repoussé
+## Rejected/deferred
 
-Android, web et Watch sont proposés hors V1 pour éviter de mener plusieurs clients de front. Widgets, complications et Live Activities ne sont pas inclus dans un engagement de livraison.
+Android, web and Watch are proposed outside V1 to avoid running several clients at once. Widgets, complications and Live Activities are not included in any delivery commitment.
