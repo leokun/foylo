@@ -11,7 +11,7 @@ This register formalizes the choices retained as of September 17, 2026. Details 
 
 ## To be validated next
 
-- V1 scope and delivered platforms.
+- Detailed acceptance criteria for the confirmed V1 scope and iPhone delivery.
 - Business semantics and detailed conceptual schema.
 - Backend, authentication and hosting.
 - Local storage and synchronization protocol.

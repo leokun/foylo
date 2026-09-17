@@ -54,5 +54,5 @@ If your output contradicts an existing ADR, surface it explicitly rather than si
 
 - All documentation is written in English, including ADRs.
 - ADRs live in `docs/adr/`, numbered with four digits (`0001-...`), and are indexed in `docs/adr/README.md`. Add a row to that index when creating an ADR.
-- `CONTEXT.md` does not exist yet. When `/domain-modeling` creates it, seed the glossary from `docs/02-domain-model.md`, which currently holds the domain vocabulary.
+- `CONTEXT.md` records resolved domain terms. `docs/02-domain-model.md` retains the broader conceptual model and terminology still to validate.
 - The design dossier in `docs/` (files `00-` to `09-`) is the current source of truth. Read `docs/README.md` first: it lists the open decisions in order.

@@ -2,9 +2,9 @@
 
 ## Decided
 
-None of the features below is committed to development. Their deferral follows from the proposed V1 scope, which is still to be confirmed.
+None of the features below is committed to development. Their deferral follows from the [confirmed V1 scope](01-v1-scope.md).
 
-## Rejected/deferred: proposals for after V1
+## Rejected/deferred: outside V1
 
 | Topic | Intent | Reason for deferral |
 | --- | --- | --- |
