@@ -1,0 +1,11 @@
+# Local configuration
+.env
+.env.*
+!.env.example
+
+# Local workspaces
+.claude/worktrees/
+
+# Build and dependency outputs
+node_modules/
+dist/

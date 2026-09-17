@@ -2,11 +2,14 @@
 
 The current prototype follows the confirmed one-action interaction. With no declaration, normal school arrival or pick-up is assumed and no care is counted. Morning Care entry supplies the declared start; afternoon Care exit supplies the declared end. The pattern supplies the other boundary. Earlier automatic-care-activation and missing-exit interpretations are superseded.
 
-These examples record the product owner's confirmations in [Planned/observed rules](https://github.com/leokun/foylo/issues/7). They describe single-day sessions with an unambiguous applicable plan, including the transition at the end of a lunch slot. They do not settle historical plan versioning, conflicting calendars or concurrent corrections.
+These examples record the product owner's confirmations in [Planned/observed rules](https://github.com/leokun/foylo/issues/7). They describe single-day sessions with an unambiguous applicable plan, including the transition at the end of a lunch slot. Historical plan versioning, conflicting calendars and concurrent corrections are now specified in the [V1 business decisions](12-v1-business-decisions.md), with a separate validation matrix. A later [verification pass](13-prototype-verification.md) exercises selected defaults with explicit in-memory fixtures; its limits remain separate from the earlier results below.
 
 | Situation | Confirmed interpretation |
 | --- | --- |
 | School begins at 08:30; Care entry declared at 07:45 | Automatically record 07:45-08:30, giving 45 minutes with a declared start and pattern-derived end. |
+| At 08:00, entry declared at 07:45 and school starts at 08:30 | Care in progress; show entry 07:45, planned end 08:30 and expected duration 45 minutes. Exclude the 45 minutes from the calculated total until 08:30. |
+| At 08:30, the same valid morning interval reaches its pattern-derived end | Include 45 minutes in the calculated total, keeping the pattern-derived end visible. No manual exit is required. |
+| Entry declared at 07:45, then an exceptional morning exit declared at 08:10, with school planned at 08:30 | Replace the pattern-derived end with the declared exit. Include 25 declared minutes in the total, with history preserved. |
 | Morning-care pattern with no entry declaration | Normal school arrival assumed; no care recorded and no incomplete-care warning. |
 | Lunch before the planned slot ends, with no declaration | Planned only, excluded from the taken-meal total. |
 | Lunch at or after the planned slot end, with no declaration | One presumed meal, distinct from declared attendance. |
@@ -23,6 +26,10 @@ These examples record the product owner's confirmations in [Planned/observed rul
 | Explicit Care exit before the usable care start on a single-day session | Mark Needs completion instead of contributing an inconsistent duration. |
 
 The monthly summary separates presumed and declared meals, estimated and fully declared durations, and shows the number of sessions that need completion. Unknown duration must not silently appear as zero.
+
+## Latest confirmations: morning interval in progress and explicit exit
+
+The product owner confirmed the live display, total transition and optional explicit morning exit described above. These are confirmed requirements; the later verification report distinguishes executed examples from pending browser checks. The earlier verification below predates these clarifications. The later [verification pass](13-prototype-verification.md) executes the 08:00, 08:29 and 08:30 aggregation boundaries, the exceptional 08:10 exit, and its annulment. Browser display and interaction remain unverified.
 
 ## Prototype boundary
 
@@ -48,4 +55,4 @@ Previous examples of append-only correction, annulment, unresolved concurrent co
 
 Local artifacts for this session: `/tmp/foylo-planned-observed-domain.ts`, `/tmp/foylo-planned-observed-domain.js` and `/tmp/foylo-planned-observed-prototype.html`. They are temporary files, not committed or published deliverables. This note preserves the verified examples and limitations in the design dossier.
 
-The meal transition is confirmed at the planned slot end. The prototype uses an explicit local clock for this boundary; time-zone policy, daylight-saving transitions and the authoritative clock for offline devices remain separate decisions.
+The meal transition is confirmed at the planned slot end. The prototype uses an explicit local clock for this boundary; the adopted time-zone, daylight-saving and offline-clock rules are specified in the [V1 business decisions](12-v1-business-decisions.md#time-and-offline-interpretation) and remain unverified in the prototype.

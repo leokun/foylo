@@ -2,11 +2,15 @@
 
 ## Decided
 
-No authentication provider or permissions matrix has been chosen yet.
+The [conceptual model](02-domain-model.md) establishes FamilyMembership as the household access boundary, independently of represented Persons and Assignments. Better Auth is selected as the authentication library; the detailed permissions matrix and external sign-in methods remain open.
+
+The product owner prefers an authentication library integrated into the Foylo backend with independently hosted PostgreSQL, to avoid dependence on Supabase. Better Auth is selected with Prisma 7 under [ADR 0007](adr/0007-backend-stack-and-package-boundaries.md). The [local prototype](14-backend-compatibility-prototype.md) verifies basic database session creation and revocation; mobile integration and the complete session lifecycle still require validation. This is not a decision to build authentication mechanisms from scratch.
+
+Local testability is a selection criterion: account, session and household-access scenarios should run against disposable local data. External identity-provider and real-device flows still need their own integration checks.
 
 ## To validate
 
-The household would be the primary access scope. The proposed model goes through FamilyMembership between User and Family, even though V1 usage is limited to one family per account and two adults. This avoids hard-coding a single membership directly in User.
+The household is the primary access scope. FamilyMembership links User and Family; V1 permits at most one active family per account and two active adult memberships per family. Invitation and role policies must enforce those limits.
 
 A Person shown in the schedule does not necessarily have an account. A grandparent could be designated as a responsible adult without being granted access to the application.
 

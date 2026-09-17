@@ -4,7 +4,11 @@
 
 Check-in must work without a network connection. The action is recorded locally and visible immediately, then synchronized when connectivity returns. Check-ins are facts appended to the log.
 
-## To validate
+## Adopted business behavior
+
+The [V1 business decisions](12-v1-business-decisions.md) define idempotent retries, explicit concurrent-fact resolution, planning revision conflicts and separate event/recording/receipt times. These rules are independent of the synchronization engine.
+
+## To validate: technical integration
 
 The proposed flow is: input, durable local storage, display, outgoing queue, server validation, then reception of changes on the other devices.
 
@@ -15,12 +19,12 @@ The interface will need to distinguish data that is stored on the device, synchr
 | Situation | Decision required |
 | --- | --- |
 | Same operation resent | Deduplication by mutation identity |
-| Two adults check in the same pick-up | Keep both facts and decide on the business interpretation |
-| Two corrections of the same check-in | Define which correction applies and how it is flagged |
-| Concurrent modification of a rule | Choose between versioning, resolution or flagging |
+| Two adults check in the same pick-up | Keep both facts as a suspected duplicate until explicit resolution |
+| Two corrections of the same check-in | Flag competing corrections, exclude affected totals, require explicit resolution |
+| Concurrent modification of a rule | Retain the accepted revision and flag stale edits as conflicting proposals |
 | Access revoked before sending | Refuse the server write and define what happens to the local entry |
 
-The append-only log preserves the facts, but does not by itself resolve how they are interpreted. "Earliest wins" or a divergence threshold are unvalidated proposals. Last-write-wins per field for rules and exceptions also remains to be evaluated.
+The append-only log preserves facts. The adopted business interpretation rejects earliest-wins, time-difference thresholds and silent last-write-wins for conflicting declarations or planning edits.
 
 SQLite, PowerSync, ElectricSQL or a dedicated synchronization layer are candidate approaches. No choice of local library or synchronization engine has been made.
 

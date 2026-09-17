@@ -13,3 +13,7 @@ The planned is computed on demand from rules, calendars and exceptions. The obse
 The pre-filled occurrence table and the mutable occurrence as the single source of the observed are abandoned. The calendar becomes a dependency of the computation, to avoid counting activities when the facility is closed.
 
 Occurrence identities, preservation of the historical schedule, concurrent corrections and the reading of incomplete data remain to be defined. The absence of a check-in does not prove a presence.
+
+## Subsequent clarification
+
+[0005](0005-occurrence-references-and-planning-basis.md) and the [V1 business decisions](../12-v1-business-decisions.md) now define occurrence references, planning history, concurrency and incomplete readings. Presumed lunch is a labeled inference at the planned boundary, not a declared presence.

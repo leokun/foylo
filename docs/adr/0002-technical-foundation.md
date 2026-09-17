@@ -1,6 +1,6 @@
 # 0002: technical foundation
 
-Date: September 17, 2026. Status: Decided.
+Date: September 17, 2026. Status: Partially superseded by [ADR 0007](0007-backend-stack-and-package-boundaries.md): server-side Prisma replaces Drizzle. Expo, React Native, TypeScript and PostgreSQL remain selected.
 
 ## Context and decision
 
