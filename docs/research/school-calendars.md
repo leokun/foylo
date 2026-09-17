@@ -72,3 +72,7 @@ The national school arrêté explicitly includes the Ascension bridge. That does
 - How are source attribution, freshness and unknown coverage shown?
 
 Before implementation, acceptance examples should cover a taught Saturday, a Friday after-school slot before a holiday, the return morning, a daylight-saving boundary, a summer-start marker, daycare open during school holidays, missing future coverage and an institution-specific closure. No importer or product behavior was implemented by this research.
+
+## Historical research
+
+The [initial research note](archive/school-calendars-initial.md) is preserved for provenance. Its earlier normalization and coverage recommendations are superseded by this consolidated note and the current domain decisions.
