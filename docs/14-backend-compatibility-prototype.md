@@ -41,3 +41,7 @@ Verdict: the selected stack and package split work for these local integration c
 Sources: [Better Auth Express handler](https://better-auth.com/docs/integrations/express), [Prisma adapter](https://better-auth.com/docs/adapters/prisma), [Nest integration alternatives](https://better-auth.com/docs/integrations/nestjs). The executed archive and results are the primary evidence for the table above.
 
 Archive SHA-256: `7badb4c7f8942cf7cf5a1ffec5794c39bf1a93b242eb725babe9bca2eaebcfe3`.
+
+## September 18 follow-up
+
+The [backend gate probes and mobile validation sequence](15-mobile-sync-validation.md) record six additional assertions, including reproduction of the interruption and concurrent-revocation defects, isolated locking and timeout checks, and a bounded-completion wrapper probe. They do not modify the original adapter. The production-only audit still reports four high-severity affected packages; shutdown and connection-loss outcomes remain pending.

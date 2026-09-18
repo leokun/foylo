@@ -1,6 +1,6 @@
 # Foylo: design dossier
 
-Updated September 17, 2026. Current phase: documentation and decisions, no implementation.
+Updated September 18, 2026. Current phase: documentation and decisions, no implementation.
 
 These documents draw on the "Family check-in applications" conversation of September 17, 2026, in particular its full brief, its counter-analysis and its final synthesis. Earlier proposals are kept as leads where they have not been confirmed. The initial transcription did not include new technical, commercial or legal research. Subsequent research is listed separately below and does not itself confirm a product or architecture choice.
 
@@ -20,7 +20,9 @@ These documents draw on the "Family check-in applications" conversation of Septe
 12. [V1 business decisions](12-v1-business-decisions.md)
 13. [Prototype verification](13-prototype-verification.md)
 14. [Backend compatibility prototype](14-backend-compatibility-prototype.md)
-15. [Decision register](adr/README.md)
+15. [Mobile synchronization baseline and validation](15-mobile-sync-validation.md)
+16. [Native synchronization prototype](16-native-sync-prototype.md)
+17. [Decision register](adr/README.md)
 
 ## Statuses
 
@@ -36,10 +38,11 @@ The product owner has confirmed daily coordination as the primary value, the [V1
 
 The [V1 specification map](https://github.com/leokun/foylo/issues/1) tracks decisions and their dependencies. Its agreed destination covers user journeys with acceptance criteria, planned/observed business rules, the conceptual data model, and the technical foundation. SQL schema, API payloads, screen designs and repository tooling are outside this map.
 
-Research findings checked on September 17, 2026:
+Research findings checked on September 17-18, 2026:
 
 - [French school calendars and institution-specific closures](research/school-calendars.md).
 - [Offline synchronization: PowerSync, ElectricSQL and a custom protocol](research/offline-sync.md).
+- [Mobile storage and synchronization with the selected backend](research/mobile-storage-and-sync.md).
 - [Backend and authentication: Supabase and a dedicated API](research/backend-and-auth.md).
 - [Better Auth: PostgreSQL, Expo and local validation](research/better-auth.md).
 - [Effect and database compatibility, including MikroORM and Prisma](research/effect-database.md).
@@ -64,7 +67,7 @@ The backend stack is now selected: NestJS, Effect, Prisma 7, PostgreSQL and Bett
 
 The product owner delegated the remaining business choices instead of continuing per-case confirmation. The [V1 business decisions](12-v1-business-decisions.md) now settle occurrence identity, planning revisions, calendar precedence, concurrent facts and time interpretation. They supplement earlier confirmations and supersede earlier open-status wording on those subjects.
 
-1. Resolve the remaining backend integration gates, then choose local storage and synchronization using the frozen model and selected backend stack.
+1. Use the [executed native prototype](16-native-sync-prototype.md) to define access revalidation, offline lifetime and revoked-cache cleanup, then close the remaining physical-device, recovery, full conflict-reducer and backend failure gates. SQLite/PowerSync remains the preferred candidate; no production engine or hosting choice is finalized.
 2. Complete access/privacy/notification requirements and the detailed V1 journey acceptance criteria, including technical constraints that affect those choices.
 3. Assemble the V1 specification and implementation sequence.
 4. Retain browser verification and the unmodeled integration cases as pending acceptance work; the local-file browser check was blocked by browser security policy. The [20 executed prototype scenarios](13-prototype-verification.md) remain limited evidence.
@@ -73,4 +76,4 @@ Continue with reasonable V1 defaults under the delegated mandate. Revisit a deci
 
 Earlier confirmed rules and their limited prototype results are recorded in the [worked examples](10-planned-observed-examples.md). They now cover the pattern-default and morning-entry/afternoon-exit interactions. Browser verification of the demonstration remains incomplete and is not production acceptance.
 
-The isolated backend experiment is authorized and complete. Starting the production application remains a separate step.
+The isolated backend and first native synchronization experiments have executed evidence with explicit limits. The native slice works on two simulators, including bundled offline restart, idempotent retry and account queue isolation. Revocation revalidation and broader acceptance remain open. Starting the production application remains a separate step.
