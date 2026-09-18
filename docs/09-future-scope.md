@@ -8,9 +8,13 @@ None of the features below is committed to development. Their deferral follows f
 
 | Topic | Intent | Reason for deferral |
 | --- | --- | --- |
+| Other summary export formats | CSV, PDF or additional report formats | Excel (.xlsx) is now included in V1; additional formats remain unselected |
+| Copy planning between children | Duplicate a weekly template and adapt it independently | Explicitly excluded from V1 by the product owner |
+| One-day caregiver replacement | Swap caregiver and contract rules for one date | Last-minute replacements are too rare to justify V1 functionality; concurrent weekly caregivers remain supported |
+| Alternating weeks | A/B weeks or multi-week planning rotations | The product owner selected a single repeated weekly template for V1 |
 | Rounds | Ordered stops and possible reordering | Validate the daily list of responsibilities first |
 | Navigation | Open a destination in Waze or Apple Maps | Complements coordination, not essential to check-in |
-| Pricing | Price per meal, duration or time slot | Business rules distinct from quantities and durations |
+| Monetary pricing | Price per meal, duration or time slot | Contract-based counted duration is in V1; monetary amounts remain deferred |
 | Watch | Next task and quick check-in | Additional client and synchronization to be studied |
 | Android | Extend mobile access | Focus the first delivery on iPhone |
 | Web | Configuration and history | Avoid an additional interface in V1 |

@@ -1,30 +1,25 @@
 # Security and privacy
 
-## Decided
+## Adopted V1 requirements
 
-Detailed security choices remain to be validated. The domain contains sensitive data for families: people, usual places, schedules and responsibilities.
+The [access and local privacy policy](17-access-and-privacy.md) is the detailed baseline. It records design defaults, acceptance cases and release gates; these protections are not yet implemented or accepted.
 
-## To validate: proposed requirements
+- No live location, unnecessary identity data or third-party behavioral analytics SDK.
+- Application data and operational backups hosted in the European Union, subject to actual provider verification.
+- Account-scoped encrypted local storage and secure session/key storage; household caches, pending commands and credentials excluded from transferable backups.
+- No household details in notification content, ordinary technical logs or app-switcher snapshots.
+- At most 24 hours of local access after authoritative validation. Foreground access checks run independently of upload progress.
+- Confirmed membership removal immediately hides protected views and starts restart-safe local cleanup. Offline remote erasure is not promised.
+- Account switching preserves a separately locked queue; explicit sign-out removes local data after an explicit loss choice when unsent work exists.
 
-- No real-time location.
-- Hosting in the European Union.
-- Short-lived invitations and revocation of server access as soon as a member is removed.
-- No first name, place or other sensitive detail in external push content.
-- No third-party analytics SDK.
-- Systematic household access control and traceability of corrections.
+The native experiment proved selected mechanics only. In particular, a paused upload left cached records visible after server revocation until an authoritative refusal triggered cleanup. See the [evidence and limitations](16-native-sync-prototype.md#revocation-is-not-immediate-cache-removal).
 
-These proposals come from the counter-analysis. They do not describe protections already in place.
+## Release gates
 
-## Questions to resolve before implementation
+Storage encryption, key loss, backup exclusions, physical-device behavior, notification cleanup and interrupted purge require implementation and validation. The prototype's plaintext diagnostic snapshots must not ship.
 
-1. Which place and person data is actually necessary in V1?
-2. How should the local database, sessions and backups be protected?
-3. What does an offline device keep after a revocation, and when is local data deleted?
-4. What retention period should be chosen for check-ins, logs and backups?
-5. How should the append-only history be reconciled with a deletion request or the closure of the household?
-6. How should the owner's departure and the transfer of responsibility for the family account be handled?
-7. Which data is allowed in technical logs and diagnostic tools?
+Define account deletion, Person erasure, household closure, exceptional ownership recovery, log retention, server backup lifetime and post-deletion restore controls before release. Accepted household history is retained during active use, but append-only business history does not define a legal retention period or replace an explicit erasure process.
 
-## Rejected/deferred
+## Deferred
 
-Cross-household sharing and limited third-party access are proposed for after V1. Their implications must not be considered resolved by the OWNER/ADULT/MEMBER roles alone.
+Cross-household sharing and limited external-caregiver access remain outside V1. The OWNER/ADULT matrix does not settle their future privacy requirements.

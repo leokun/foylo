@@ -24,6 +24,8 @@ Status: adopted V1 defaults under the product owner's instruction to resolve the
 
 Calendars attach to the relevant activity/place. School holidays do not automatically close a nanny or daycare activity that does not follow that calendar.
 
+The product owner explicitly requires school closures and nanny training/unavailability to override the usual plan for the affected dates. Record them against the relevant service/activity calendar with a reason and visible impact scope, preserving the weekly template, unrelated services and accepted facts. See the [closure interaction requirements](01-v1-scope.md#confirmed-closures-and-caregiver-unavailability).
+
 Apply these rules in order:
 
 1. An explicit personal cancellation removes the planned attendance for that person. It does not create an observed absence or erase declarations.

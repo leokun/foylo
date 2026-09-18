@@ -37,3 +37,7 @@ SQLite is selected for the next isolated mobile experiment. PowerSync with its n
 ## Native evidence, September 18
 
 The [native prototype report](16-native-sync-prototype.md) demonstrates a first SQLite/PowerSync slice on two iOS simulators. Pending uploads and downloaded rows survive native restarts; lost-response replay is idempotent; durable rejection recovery and account queue isolation were exercised. A revoked client with a paused upload retained cached rows until an authoritative refusal triggered cleanup. Define bounded online access revalidation and offline lifetime before production adoption. Physical devices, full conflict resolution and state rebuild remain pending.
+
+## Adopted access policy
+
+The [V1 access policy](17-access-and-privacy.md) now selects a 24-hour offline access period and independent foreground access checks every 30 seconds. Expiry locks views and retains encrypted pending work; confirmed membership removal starts restart-safe purge. Authentication failure and ambiguous 403 responses do not themselves erase work. These are requirements awaiting implementation and physical-device validation.

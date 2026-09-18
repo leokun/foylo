@@ -4,11 +4,15 @@
 
 The chosen mobile foundation is Expo / React Native / TypeScript. Business logic must be shareable.
 
-V1 delivery is iPhone-only, confirmed with the [V1 scope](01-v1-scope.md) on September 17, 2026.
+V1 delivery is iPhone-only, confirmed with the [V1 scope](01-v1-scope.md) on September 17, 2026. The product owner also confirmed a French-only user interface for V1.
+
+## Initial household test devices
+
+The product owner reported an iPhone 14 and an iPhone 14 Pro, running iOS 26 and iOS 27. The exact model-to-version pairing and OS builds have not been confirmed. These are the intended physical test devices, not evidence of successful installation or compatibility, and not yet the minimum supported OS decision.
 
 ## To validate
 
-Minimum versions, supported iPhone models and distribution mode remain to be chosen.
+The first trial is limited to the product owner's household. Minimum versions, supported iPhone models and the technical distribution method remain to be chosen.
 
 Android remains a future possibility, consistent with the mobile choice. A web interface could make it easier to configure weekly templates and browse history.
 

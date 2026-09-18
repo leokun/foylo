@@ -2,6 +2,10 @@
 
 Research for [Source of French school calendars and institution-specific closures](https://github.com/leokun/foylo/issues/4), supporting the [Foylo V1 specification map](https://github.com/leokun/foylo/issues/1). Checked September 17, 2026 against official sources. This document records evidence and proposals, not product decisions.
 
+## Subsequent product decision
+
+The product owner subsequently confirmed France-only V1 scope and required importing official state school-holiday data. The [V1 scope](../01-v1-scope.md#confirmed-calendar-geography-and-one-off-form) selects the Ministry dataset and specifies versioning, offline availability and incomplete-coverage behavior. Calendar precedence is settled in the [business decisions](../12-v1-business-decisions.md#calendars-and-exceptions). Earlier candidate wording below records the research chronology, not the current decision status. The initial household is in Brittany, with Rennes/Zone B proposed from the official calendar. Import execution and current per-year feed coverage remain unverified.
+
 ## Findings
 
 The Ministry's school-calendar dataset is a suitable candidate for import, with legal calendars as the reference for interpretation. It cannot by itself determine whether a particular lunch, daycare or nanny activity is open. Source selection, supported territories and precedence remain to validate under [the domain model](../02-domain-model.md).

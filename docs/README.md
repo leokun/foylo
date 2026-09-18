@@ -22,7 +22,12 @@ These documents draw on the "Family check-in applications" conversation of Septe
 14. [Backend compatibility prototype](14-backend-compatibility-prototype.md)
 15. [Mobile synchronization baseline and validation](15-mobile-sync-validation.md)
 16. [Native synchronization prototype](16-native-sync-prototype.md)
-17. [Decision register](adr/README.md)
+17. [V1 access and local privacy policy](17-access-and-privacy.md)
+18. [V1 journey acceptance criteria](18-v1-journey-acceptance.md)
+19. [V1 support and feedback](19-support-and-feedback.md)
+20. [V1 specification and implementation sequence](20-v1-specification-and-delivery-plan.md)
+21. [Lifecycle, erasure and recovery](21-lifecycle-erasure-and-recovery.md)
+22. [Decision register](adr/README.md)
 
 ## Statuses
 
@@ -32,7 +37,7 @@ These documents draw on the "Family check-in applications" conversation of Septe
 
 Examples and validation criteria refine the plan; they do not constitute additional validation of the scope.
 
-The product owner has confirmed daily coordination as the primary value, the [V1 scope](01-v1-scope.md), and its six essential validation scenarios. The remaining planning and planned/observed rules now have adopted V1 defaults. Full journey acceptance criteria remain to be completed.
+The product owner has confirmed daily coordination as the primary value, the [V1 scope](01-v1-scope.md), and its six essential validation scenarios. The remaining planning and planned/observed rules now have adopted V1 defaults. France-only school calendars and the simple one-off activity form are confirmed in the scope. The [six journey acceptance criteria](18-v1-journey-acceptance.md) and [notification policy](06-notifications.md) are specified; implementation and end-to-end acceptance remain pending.
 
 ## V1 specification map and research
 
@@ -67,10 +72,20 @@ The backend stack is now selected: NestJS, Effect, Prisma 7, PostgreSQL and Bett
 
 The product owner delegated the remaining business choices instead of continuing per-case confirmation. The [V1 business decisions](12-v1-business-decisions.md) now settle occurrence identity, planning revisions, calendar precedence, concurrent facts and time interpretation. They supplement earlier confirmations and supersede earlier open-status wording on those subjects.
 
-1. Use the [executed native prototype](16-native-sync-prototype.md) to define access revalidation, offline lifetime and revoked-cache cleanup, then close the remaining physical-device, recovery, full conflict-reducer and backend failure gates. SQLite/PowerSync remains the preferred candidate; no production engine or hosting choice is finalized.
-2. Complete access/privacy/notification requirements and the detailed V1 journey acceptance criteria, including technical constraints that affect those choices.
-3. Assemble the V1 specification and implementation sequence.
-4. Retain browser verification and the unmodeled integration cases as pending acceptance work; the local-file browser check was blocked by browser security policy. The [20 executed prototype scenarios](13-prototype-verification.md) remain limited evidence.
+The [consolidated V1 specification and implementation sequence](20-v1-specification-and-delivery-plan.md) maps each requirement to its detailed source, acceptance criteria and future implementation lot. It includes the support form and keeps all release gates explicit.
+
+The monthly recap now includes Excel export, superseding the earlier in-app-only scope. Recorded and contract-retained times and durations remain distinct in both views. Export offers separate files per child or one combined workbook, with one [First name] École worksheet per child and one separate worksheet per child/caregiver pair. These cover school care/lunch and nanny times, normal/supplementary hours, meals, snacks, subtotals and monthly totals. Nanny meals/snacks are planned in the weekly or typical-day setup and count only food supplied by the caregiver, excluding parent-supplied food. Food counts follow the plan, exclude items affected by child/caregiver absence and permit corrections. In advance when editing the dated day, or at collection/a half-day change, the parent explicitly chooses whether to remove the meal, snack or both; no food-time configuration is required. Possible compensation between normal and supplementary hours is explicitly unconfirmed. Nanny leave days must be recorded separately from child absences and training, including in Excel; their contract-hour treatment remains to confirm, with no assumed zero-hour default.
+
+School care and nanny/nursery accounting offer exact minutes or 5/10/15/30-minute increments with configurable Up/Down rounding. Clock-time boundary rounding is selected by default, with no basis selector. Arrival and departure directions are independently configurable, defaulting to Down and Up respectively; source times and pattern-derived provenance remain preserved.
+
+A child can have multiple concurrent caregivers with independent days, calendars, contracts and food rules, including one caregiver on Monday/Tuesday/Thursday/Friday and another on Wednesday. Reconcile these arrangements with the conceptual model; Excel presentation is confirmed as one sheet per child/caregiver pair.
+
+The confirmed [caregiver contract windows and counted duration](01-v1-scope.md#confirmed-caregiver-contract-windows-and-counted-duration) distinguish exact declarations from contract-retained time. Exact-minute or 5/10/15/30-minute increment accounting is selected. Absence hours are confirmed case by case from a contract default, without justification tracking. Reconcile the conceptual model and monthly summary before freezing persistence contracts.
+
+1. Validate automatic same-verified-email account matching for the selected [Apple, Google and email sign-in links](05-auth-permissions.md), including Apple relay addresses. Backup email and manual recovery are deferred. The [lifecycle policy](21-lifecycle-erasure-and-recovery.md) now specifies erasure, closure, retention and the no-override recovery boundary; provider feasibility and policy review remain release gates.
+2. Validate the adopted [access policy](17-access-and-privacy.md) and remaining physical-device, encrypted-storage, recovery, full conflict-reducer and backend failure gates. SQLite/PowerSync remains conditional.
+3. Once production implementation starts, follow the dependency-ordered lots in the consolidated plan. Support requests will stay in the Foylo database with an internal feature-prioritization list; validate reviewer access and retention for that lot. Select a notification provider before notification integration.
+4. Execute the [six journeys](18-v1-journey-acceptance.md), [notification checks](06-notifications.md) and [support checks](19-support-and-feedback.md) against the assembled product. Retain browser and unmodeled integration verification as pending; existing prototype results remain limited evidence.
 
 Continue with reasonable V1 defaults under the delegated mandate. Revisit a decision if implementation evidence exposes a material constraint.
 
